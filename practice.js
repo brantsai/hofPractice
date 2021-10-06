@@ -24,7 +24,7 @@ var moreFruits = function(fruits) {
 var multiplesOfFive = function(numbers) {
   var count = 0;
 
-  _.each(numbers, function(number, index, collection) {
+  _.each(numbers, function(number) {
     if (number % 5 === 0) {
       count++;
     }
@@ -42,6 +42,9 @@ var multiplesOfFive = function(numbers) {
 // use _.filter to return the fruits array with only the desired fruit.
 var onlyOneFruit = function(fruits, targetFruit) {
 
+  return _.filter(fruits, function(fruit) {
+    return fruit === targetFruit;
+  });
 };
 
 // use _.filter to return the fruits array with only fruits
