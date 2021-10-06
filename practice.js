@@ -51,13 +51,15 @@ var onlyOneFruit = function(fruits, targetFruit) {
 // starting with the letter 'P'.
 var startsWith = function(fruits, letter) {
   return _.filter(fruits, function(fruit) {
-    return (fruit.indexOf(letter) === 0);
+    return fruit.indexOf(letter) === 0;
   });
 };
 
 // return a filtered array containing only cookie-type desserts.
 var cookiesOnly = function(desserts) {
-
+  return _.filter(desserts, function(dessert) {
+    return dessert['type'] === 'cookie';
+  });
 };
 
 /*
