@@ -106,7 +106,18 @@ var ninetiesKid = function(movies) {
 // runtime than your time limit.
 // timeLimit is an integer representing a number of minutes.
 var movieNight = function(movies, timeLimit) {
+  var shortestRuntime = _.reduce(movies, function(memo, movie) {
+    if (movie.runtime < memo.runtime) {
+      memo = movie.runtime;
+    }
+    return memo;
+  });
 
+  if (shortestRuntime < timeLimit) {
+    return true;
+  } else {
+    return false;
+  }
 };
 
 /*
