@@ -78,7 +78,14 @@ var sumTotal = function(products) {
 // return an object consisting of dessert types and how many of each.
 // exampleOutput: { dessertType: 3, dessertType2: 1 }
 var dessertCategories = function(desserts) {
-
+  return _.reduce(desserts, function(memo, dessert) {
+    if (!memo[dessert.type]) {
+      memo[dessert.type] = 1;
+    } else {
+      memo[dessert.type] += 1;
+    }
+    return memo;
+  }, {});
 };
 
 // given an array of movie data objects,return an array containing
