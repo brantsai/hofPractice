@@ -158,5 +158,13 @@ var upperCaseFruits = function(fruits) {
 // that have a new "glutenFree" property, with a boolean value.
 // TIP: Items that contain flour are not gluten-free.
 var glutenFree = function(desserts) {
-
+  return _.map(desserts, function(dessert) {
+    if (dessert.ingredients.includes('flour')) {
+      dessert.glutenFree = false;
+      return dessert;
+    } else {
+      dessert.glutenFree = true;
+      return dessert;
+    }
+  });
 };
