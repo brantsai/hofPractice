@@ -86,8 +86,11 @@ var dessertCategories = function(desserts) {
 // TIP: use an array as your accumulator - don't push to an external array!
 var ninetiesKid = function(movies) {
   return _.reduce(movies, function(memo, movie) {
-    if (movie['releaseYear'] >= 1990 && movie['releaseYear'] <= 2001) {
-      return memo + movie['title'];
+    if (movie['releaseYear'] >= 1990 && movie['releaseYear'] <= 2000) {
+      memo.push(movie['title']);
+      return memo;
+    } else {
+      return memo;
     }
   }, []);
 };
