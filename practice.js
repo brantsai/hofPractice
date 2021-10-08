@@ -140,7 +140,10 @@ var movieNight = function(movies, timeLimit) {
   ];
 */
 var applyCoupon = function(grocery, coupon) {
-
+  _.map(grocery, function(item) {
+    item.salePrice = (item.price - (item.price * coupon)).toFixed(2);
+  });
+  return grocery;
 };
 
 // given an array of strings, use _.map to return a new array containing all
